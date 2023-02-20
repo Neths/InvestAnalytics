@@ -1,1 +1,1 @@
-CREATE SCHEMA invest-analytics;
+CREATE SCHEMA invest_analytics;

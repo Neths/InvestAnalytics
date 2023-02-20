@@ -1,4 +1,4 @@
-CREATE DATABASE invest-analytics WITH 
+CREATE DATABASE invest_analytics WITH 
     OWNER = postgres
     ENCODING = 'UTF8'
     LC_COLLATE = 'en_US.UTF8'

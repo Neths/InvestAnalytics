@@ -1,0 +1,18 @@
+version: '3'
+services:
+  db:
+    image: postgres:11
+    volumes:
+      - ./initdb.d:/docker-entrypoint-initdb.d/
+      - ./sql:/app/sql
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=postgres
+      - LANG=en_US.UTF8
+    healthcheck:
+     test: ["CMD-SHELL", "pg_isready -U postgres"]
+     interval: 5s
+     timeout: 10s
+     retries: 15
+    container_name: invest-analytics-db

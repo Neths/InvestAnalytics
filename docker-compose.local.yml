@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  db:
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+      LANG: en_US.UTF8
+  api:
+    environment:
+      PGRST_DB_URI: postgres://app_user:password@db:5432/app_db
+      PGRST_OPENAPI_SERVER_PROXY_URI: http://127.0.0.1:3000
+  swagger:
+    environment:
+      API_URL: http://localhost:3000/

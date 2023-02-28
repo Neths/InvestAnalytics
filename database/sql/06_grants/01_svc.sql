@@ -1,6 +1,5 @@
---product_reader
+--svc
 GRANT CONNECT ON DATABASE invest_analytics TO "svc";
-
 GRANT USAGE ON SCHEMA invest_analytics TO "svc";
 
 GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA invest_analytics TO "svc";
@@ -10,4 +9,4 @@ ALTER DEFAULT PRIVILEGES
     IN SCHEMA invest_analytics
     GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO "svc";
 
-GRANT ALL ON DATABASE invest_analytics TO postgres;
+

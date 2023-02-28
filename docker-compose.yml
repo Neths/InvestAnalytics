@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  db:
+    extends:
+      file: ./database/database.yml
+      service: db
+  api:
+    extends:
+      file: ./api/api.yml
+      service: api
+    depends_on:
+      - db
+    links:
+      - db
+  swagger:
+    extends:
+      file: ./api/api.yml
+      service: swagger
+    links:
+      - api
+    depends_on:
+      - api
